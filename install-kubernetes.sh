@@ -1,3 +1,4 @@
+sudo echo "101" > /usr/sbin/policy-rc.d 
 export DEBIAN_FRONTEND=noninteractive
 sudo apt-get update
 sudo apt-get -o Dpkg::Options::="--force-confold" -o Dpkg::Options::="--force-confdef" upgrade -q -y --allow-downgrades --allow-remove-essential --allow-change-held-packages
