@@ -1,11 +1,11 @@
 sudo echo "101" > /usr/sbin/policy-rc.d 
-export DEBIAN_FRONTEND=noninteractive
-sudo apt-get update
-sudo apt-get -o Dpkg::Options::="--force-confold" -o Dpkg::Options::="--force-confdef" upgrade -q -y --allow-downgrades --allow-remove-essential --allow-change-held-packages
-sudo apt-get -o Dpkg::Options::="--force-confold" -o Dpkg::Options::="--force-confdef" dist-upgrade -q -y --allow-downgrades --allow-remove-essential --allow-change-held-packages
-sudo apt-get autoremove 
-sudo apt-get autoclean
 
+sudo apt-get update
+sudo DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confold" -o Dpkg::Options::="--force-confdef" upgrade -q -y --allow-downgrades --allow-remove-essential --allow-change-held-packages
+sudo DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confold" -o Dpkg::Options::="--force-confdef" dist-upgrade -q -y --allow-downgrades --allow-remove-essential --allow-change-held-packages
+sudo apt-get update
+sudo DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confold" -o Dpkg::Options::="--force-confdef"  autoremove -y 
+sudo DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confold" -o Dpkg::Options::="--force-confdef"  autoclean -y 
 
 sudo apt install -y python-pip htop vim software-properties-common apt-transport-https ca-certificates curl software-properties-common build-essential python-all
 
